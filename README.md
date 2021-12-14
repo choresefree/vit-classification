@@ -16,6 +16,6 @@ The num-worker is set to zero for using cpu and I suggest you increase the numbe
 
 ## Test
 
-I put 5 pictures and one checkpoint  for testing the model, you should change the class-dict when you use your own dataset.
+I put 5 pictures and for testing the model, you should change the class-dict when you use your own dataset.
 
 
