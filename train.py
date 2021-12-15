@@ -5,6 +5,7 @@ import torch.utils.data
 from torch import optim, nn
 from torchvision import transforms
 from torchvision.datasets import ImageFolder
+from timm.loss import LabelSmoothingCrossEntropy
 from timm.models.vision_transformer import vit_small_patch16_224
 
 
@@ -53,6 +54,7 @@ def train():
     # define training details
     lr = 1e-3
     criterion = nn.CrossEntropyLoss()
+    # criterion = LabelSmoothingCrossEntropy()
     optimizer = optim.SGD(net.parameters(), lr=lr, weight_decay=5e-4, momentum=0.9)
     epochs = 120
     scheduler = optim.lr_scheduler.CosineAnnealingLR(optimizer, T_max=60, eta_min=0, last_epoch=-1)
